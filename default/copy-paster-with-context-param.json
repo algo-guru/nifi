@@ -83,7 +83,22 @@
     "funnels" : [ ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
-    "labels" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 150.0,
+      "identifier" : "f59575e8-e02a-363e-a376-2cb489fac6cf",
+      "label" : "Commit testing log",
+      "position" : {
+        "x" : -449.5552082899097,
+        "y" : -438.61896519481496
+      },
+      "style" : {
+        "font-size" : "12px"
+      },
+      "width" : 150.0,
+      "zIndex" : 0
+    } ],
     "maxConcurrentTasks" : 1,
     "name" : "copypastewithcontextparam",
     "outputPorts" : [ ],
