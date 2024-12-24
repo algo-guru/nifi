@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1735020593560,
+    "description" : "Jolt learning",
+    "identifier" : "Jolt-transformation",
+    "lastModifiedTimestamp" : 1735020593560,
+    "name" : "Jolt transformation ",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
