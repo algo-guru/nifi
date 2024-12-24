@@ -19,6 +19,66 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "9521b678-5152-357f-ba03-c4b9f9970ca2",
+        "name" : "Save Deleted Store Object as file",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1169e6a9-7577-3fdb-baf0-7e3f119de1a0",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "646f81d5-f438-3a01-b8fa-4bd36c7130b4",
+        "name" : "GetFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "cab204a4-ad5f-3f5b-97d3-dc58f5fe206f",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b62736d2-6840-3a24-ab4c-a300f1d1f555",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "9521b678-5152-357f-ba03-c4b9f9970ca2",
+        "name" : "Save Deleted Store Object as file",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "b8539d46-ab27-377b-bccb-a7914b485fdc",
         "name" : "PutFile",
         "type" : "PROCESSOR"
@@ -37,7 +97,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "68d255f0-de27-3c9c-91bc-4d8e23bb0b19",
-        "name" : "JoltTransformJSON",
+        "name" : "Delete Store Object from Array ",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -50,7 +110,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "68d255f0-de27-3c9c-91bc-4d8e23bb0b19",
-        "name" : "JoltTransformJSON",
+        "name" : "Delete Store Object from Array ",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -94,6 +154,100 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cab204a4-ad5f-3f5b-97d3-dc58f5fe206f",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -856.0,
+        "y" : 120.0
+      },
+      "properties" : {
+        "Create Missing Directories" : "true",
+        "Directory" : "#{tar1}",
+        "Conflict Resolution Strategy" : "fail"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -237,18 +391,115 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "68d255f0-de27-3c9c-91bc-4d8e23bb0b19",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "JoltTransformJSON",
+      "name" : "Delete Store Object from Array ",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -152.0,
-        "y" : -144.0
+        "x" : 16.0,
+        "y" : -168.0
       },
       "properties" : {
         "Jolt Transform" : "jolt-transform-shift",
         "Max String Length" : "20 MB",
         "Transform Cache Size" : "1",
         "Pretty Print" : "false",
-        "Jolt Specification" : "\n    {\n      \"*\": \"&\",\n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": null,\n            \"*\": { \"@2\": \"filteredItems[]\" }\n          }\n        }\n      }\n    }\n "
+        "Jolt Specification" : "\n    {\n      \"*\": \"&\",\n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": null,\n            \"*\": { \"@2\": \"&4[]\" }\n          }\n        }\n      }\n    }\n "
+      },
+      "propertyDescriptors" : {
+        "Jolt Transform" : {
+          "displayName" : "Jolt Transform",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Transform",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Transform Cache Size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Transform Cache Size",
+          "sensitive" : false
+        },
+        "Custom Transformation Class Name" : {
+          "displayName" : "Custom Transformation Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Transformation Class Name",
+          "sensitive" : false
+        },
+        "Custom Module Directory" : {
+          "displayName" : "Custom Module Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Module Directory",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY" ]
+          },
+          "sensitive" : false
+        },
+        "Pretty Print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Pretty Print",
+          "sensitive" : false
+        },
+        "Jolt Specification" : {
+          "displayName" : "Jolt Specification",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Specification",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "TEXT", "FILE" ]
+          },
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jolt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "9521b678-5152-357f-ba03-c4b9f9970ca2",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Save Deleted Store Object as file",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -1072.0,
+        "y" : -112.0
+      },
+      "properties" : {
+        "Jolt Transform" : "jolt-transform-shift",
+        "Max String Length" : "20 MB",
+        "Transform Cache Size" : "1",
+        "Pretty Print" : "false",
+        "Jolt Specification" : "\n    {\n     \n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": { \"@2\": \"&4[]\" },\n            \"*\": null\n          }\n        }\n      }\n    }\n "
       },
       "propertyDescriptors" : {
         "Jolt Transform" : {
@@ -337,8 +588,8 @@
       "name" : "PutFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -496.0,
-        "y" : 24.0
+        "x" : -208.0,
+        "y" : 88.0
       },
       "properties" : {
         "Create Missing Directories" : "true",
