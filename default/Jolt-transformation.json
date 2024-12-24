@@ -1088,7 +1088,7 @@
         "Delimiter Strategy" : "Text",
         "Merge Format" : "Binary Concatenation",
         "Footer File" : "]",
-        "Max Bin Age" : "5 secs",
+        "Max Bin Age" : "10 secs",
         "Demarcator File" : ",",
         "Correlation Attribute Name" : "mergeFiles",
         "Header File" : "[",
@@ -1263,8 +1263,8 @@
       "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -3784.0,
-        "y" : -128.0
+        "x" : -3680.0,
+        "y" : -216.0
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -1618,8 +1618,8 @@
       "name" : "GetFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -3488.0,
-        "y" : -296.0
+        "x" : -3392.0,
+        "y" : -496.0
       },
       "properties" : {
         "Keep Source File" : "false",
@@ -1746,15 +1746,15 @@
       "name" : "updating the file content",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -4288.0,
-        "y" : 160.0
+        "x" : -4624.0,
+        "y" : 112.0
       },
       "properties" : {
         "Jolt Transform" : "jolt-transform-shift",
         "Max String Length" : "20 MB",
         "Transform Cache Size" : "1",
         "Pretty Print" : "false",
-        "Jolt Specification" : "{\n      \"*\": {\n        \"items\": {\n          \"*\": \"items[]\"\n        }\n      }\n    }\n  }"
+        "Jolt Specification" : "{\n      \"*\": {\n         \"*\":\"&\",\n        \"stores\": {\n          \"*\": \"stores[]\"\n        }\n      }\n    }\n  }"
       },
       "propertyDescriptors" : {
         "Jolt Transform" : {
