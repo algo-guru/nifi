@@ -1,5 +1,10 @@
 {
-  "externalControllerServices" : { },
+  "externalControllerServices" : {
+    "72705b8e-7218-3652-973b-ab3ce2ff06b9" : {
+      "identifier" : "72705b8e-7218-3652-973b-ab3ce2ff06b9",
+      "name" : "AWSCredentialsProviderControllerService"
+    }
+  },
   "flow" : {
     "createdTimestamp" : 1735020593560,
     "description" : "Jolt learning",
@@ -19,6 +24,66 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "e904665d-ace0-3f84-a556-369c0969bda2",
+        "name" : "Delete Store Object from Array ",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "caf7da2f-289e-373c-8589-9ab5cc376d79",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7deee659-f605-3415-9875-a90147f1941d",
+        "name" : "GetFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "89197f72-dbe6-38bf-8a94-167bab872bec",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c88e2504-41e7-333c-a4ad-b97cd98dc6ea",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "e904665d-ace0-3f84-a556-369c0969bda2",
+        "name" : "Delete Store Object from Array ",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "4559881f-a7a4-3d38-9b72-60f231c259e5",
         "name" : "updating the file content",
         "type" : "PROCESSOR"
@@ -26,7 +91,7 @@
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "4e434a02-a4d8-326c-bf72-f9c2b896cb98",
-      "labelIndex" : 1,
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -49,13 +114,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "24880807-51c2-3482-8cc5-d14ab753626c",
-        "name" : "Save Deleted Store Object as file",
+        "id" : "cab204a4-ad5f-3f5b-97d3-dc58f5fe206f",
+        "name" : "PutFile",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ebce3374-2acf-3894-9fbb-8b8e0fb5706f",
+      "identifier" : "b62736d2-6840-3a24-ab4c-a300f1d1f555",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -66,8 +131,98 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e26aea7f-620b-3736-8944-ba0419205e6b",
-        "name" : "Update File name",
+        "id" : "9521b678-5152-357f-ba03-c4b9f9970ca2",
+        "name" : "Save Deleted Store Object as file",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "92969894-4237-3a0a-b92c-6edab85e29cc",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d7d92bd9-db31-3b02-b7e1-be4891cd75e7",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7662b241-c176-3441-a37e-58b1726162bb",
+        "name" : "GetFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "b8539d46-ab27-377b-bccb-a7914b485fdc",
+        "name" : "PutFile",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "229c542d-ec3b-3af1-a839-3b982312eccf",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "68d255f0-de27-3c9c-91bc-4d8e23bb0b19",
+        "name" : "Delete Store Object from Array ",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "24880807-51c2-3482-8cc5-d14ab753626c",
+        "name" : "Save Deleted Store Object as file",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "61565a7e-abd8-340e-bc97-cdc3832daec4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7deee659-f605-3415-9875-a90147f1941d",
+        "name" : "GetFile",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -86,7 +241,7 @@
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "df1a1994-b8e2-3106-9e46-bb27dab9941a",
-      "labelIndex" : 1,
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -109,96 +264,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "d7e7f0ec-2ed2-36bc-a53d-3f4ce77c6aa9",
-        "name" : "PutS3Object",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "1ad4f928-b085-3dc1-b9f1-f160f2da57c1",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "e904665d-ace0-3f84-a556-369c0969bda2",
-        "name" : "Delete Store Object from Array ",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "20aeeae4-a1c6-39d4-a785-e5f3d7da3892",
-        "name" : "Update File name",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0c1e8e80-b668-327e-b496-5b765abcdcf2",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "e4ba85be-e088-3330-b4a7-9b0f10368f53",
-        "name" : "FetchS3Object",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "92969894-4237-3a0a-b92c-6edab85e29cc",
-        "name" : "UpdateAttribute",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "db8fd07e-4e3c-30f2-8c06-f6c150d8586d",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "20aeeae4-a1c6-39d4-a785-e5f3d7da3892",
-        "name" : "Update File name",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "28a83530-eba2-3e2e-9469-19309376b127",
         "name" : "MergeContent",
         "type" : "PROCESSOR"
@@ -206,7 +271,7 @@
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "473d25af-5307-3669-8f91-7fcc9c1713a6",
-      "labelIndex" : 1,
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -229,13 +294,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e26aea7f-620b-3736-8944-ba0419205e6b",
-        "name" : "Update File name",
+        "id" : "9521b678-5152-357f-ba03-c4b9f9970ca2",
+        "name" : "Save Deleted Store Object as file",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "11d02713-c39d-3e39-9b4a-0bb3612efa2e",
+      "identifier" : "1169e6a9-7577-3fdb-baf0-7e3f119de1a0",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -246,8 +311,8 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "a0ef8106-f91a-357a-9f89-0d1a79ba2c04",
-        "name" : "FetchS3Object",
+        "id" : "646f81d5-f438-3a01-b8fa-4bd36c7130b4",
+        "name" : "GetFile",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -266,7 +331,7 @@
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "bc608918-c0c4-3933-888b-8fcf51997da8",
-      "labelIndex" : 1,
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -289,36 +354,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e4ba85be-e088-3330-b4a7-9b0f10368f53",
-        "name" : "FetchS3Object",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "fa5c02a9-590a-360c-965f-30eaf6913ab8",
-      "labelIndex" : 1,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "c15b702f-03ee-38d6-8620-eb66bd15eeec",
-        "name" : "ListS3",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 0
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "3e961ac0-38f6-3235-a3f3-dc5666a53831",
         "name" : "UpdateAttribute",
         "type" : "PROCESSOR"
@@ -326,7 +361,7 @@
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "ed55bcdd-4cc2-3a53-9fe5-423200742d87",
-      "labelIndex" : 1,
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -349,14 +384,14 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "1ae14b16-c67a-35f3-be3e-e96fb5160b55",
-        "name" : "PutS3Object",
+        "id" : "43cfed7c-6b40-39d8-ab59-feea3f54f913",
+        "name" : "PutFile",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "de34c2ea-3168-31f1-8ba6-4990bcaab8cd",
-      "labelIndex" : 1,
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -379,13 +414,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e904665d-ace0-3f84-a556-369c0969bda2",
-        "name" : "Delete Store Object from Array ",
+        "id" : "0b69ca85-ff25-32ca-bfa5-b5e13846e802",
+        "name" : "FetchS3Object",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0030292c-b950-39c4-a6fb-cb4058ba2273",
+      "identifier" : "5454b718-5d38-3f80-b448-527b06c9f489",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -396,8 +431,8 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "a0ef8106-f91a-357a-9f89-0d1a79ba2c04",
-        "name" : "FetchS3Object",
+        "id" : "45b4286c-bc1e-3713-9d25-4845af4e0328",
+        "name" : "ListS3",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -409,13 +444,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "a0ef8106-f91a-357a-9f89-0d1a79ba2c04",
-        "name" : "FetchS3Object",
+        "id" : "68d255f0-de27-3c9c-91bc-4d8e23bb0b19",
+        "name" : "Delete Store Object from Array ",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "595e9fda-a4f4-3e33-a9bd-9b9d14e13513",
+      "identifier" : "0441f218-0e5f-3040-8fd2-ef1db43dd942",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -426,8 +461,8 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "03cba1a4-9e22-335f-aa4e-5f10e4f1663c",
-        "name" : "ListS3",
+        "id" : "646f81d5-f438-3a01-b8fa-4bd36c7130b4",
+        "name" : "GetFile",
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
@@ -457,7 +492,7 @@
         "type" : "org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderService"
       } ],
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
+      "identifier" : "90bf5a3f-7a09-3ab5-9d04-50383826e832",
       "name" : "AWSCredentialsProviderControllerService",
       "properties" : {
         "default-credentials" : "false",
@@ -602,7 +637,12 @@
     "defaultBackPressureObjectThreshold" : 10000,
     "defaultFlowFileExpiration" : "0 sec",
     "executionEngine" : "INHERITED",
-    "externalControllerServiceReferences" : { },
+    "externalControllerServiceReferences" : {
+      "72705b8e-7218-3652-973b-ab3ce2ff06b9" : {
+        "identifier" : "72705b8e-7218-3652-973b-ab3ce2ff06b9",
+        "name" : "AWSCredentialsProviderControllerService"
+      }
+    },
     "flowFileConcurrency" : "UNBOUNDED",
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
     "funnels" : [ ],
@@ -610,7 +650,7 @@
     "inputPorts" : [ ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "TornadoHiveUsecase",
+    "name" : "JoltLearning",
     "outputPorts" : [ ],
     "parameterContextName" : "copypastecontext",
     "position" : {
@@ -619,6 +659,257 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3e961ac0-38f6-3235-a3f3-dc5666a53831",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -4312.0,
+        "y" : -136.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "canonical-value-lookup-cache-size" : "100",
+        "mergeFiles" : "merge-content"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "canonical-value-lookup-cache-size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "mergeFiles" : {
+          "displayName" : "mergeFiles",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "mergeFiles",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jolt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e904665d-ace0-3f84-a556-369c0969bda2",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Delete Store Object from Array ",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -4544.0,
+        "y" : -752.0
+      },
+      "properties" : {
+        "Jolt Transform" : "jolt-transform-shift",
+        "Max String Length" : "20 MB",
+        "Transform Cache Size" : "1",
+        "Pretty Print" : "false",
+        "Jolt Specification" : "\n    {\n      \"*\": \"&\",\n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": null,\n            \"*\": { \"@2\": \"&4[]\" }\n          }\n        }\n      }\n    }\n "
+      },
+      "propertyDescriptors" : {
+        "Jolt Transform" : {
+          "displayName" : "Jolt Transform",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Transform",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Transform Cache Size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Transform Cache Size",
+          "sensitive" : false
+        },
+        "Custom Transformation Class Name" : {
+          "displayName" : "Custom Transformation Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Transformation Class Name",
+          "sensitive" : false
+        },
+        "Custom Module Directory" : {
+          "displayName" : "Custom Module Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Module Directory",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY" ]
+          },
+          "sensitive" : false
+        },
+        "Pretty Print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Pretty Print",
+          "sensitive" : false
+        },
+        "Jolt Specification" : {
+          "displayName" : "Jolt Specification",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Specification",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "TEXT", "FILE" ]
+          },
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "9324ab58-c355-332b-9553-8ca861ed12a5",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "UpdateAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -4416.0,
+        "y" : 360.0
+      },
+      "properties" : {
+        "filename" : "${filename}.json",
+        "Store State" : "Do not store state",
+        "canonical-value-lookup-cache-size" : "100",
+        "mergeFiles" : "merge-content"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "filename" : {
+          "displayName" : "filename",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "filename",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "canonical-value-lookup-cache-size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "mergeFiles" : {
+          "displayName" : "mergeFiles",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "mergeFiles",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -632,19 +923,19 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e4ba85be-e088-3330-b4a7-9b0f10368f53",
+      "identifier" : "0b69ca85-ff25-32ca-bfa5-b5e13846e802",
       "maxBackoffPeriod" : "10 mins",
       "name" : "FetchS3Object",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -3376.0,
-        "y" : -584.0
+        "x" : -2864.0,
+        "y" : -608.0
       },
       "properties" : {
         "Endpoint Override URL" : "https://s3-eu1.object.storage.tpc.tesco.org",
         "requester-pays" : "false",
         "Object Key" : "${filename}",
-        "AWS Credentials Provider service" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
+        "AWS Credentials Provider service" : "72705b8e-7218-3652-973b-ab3ce2ff06b9",
         "Signer Override" : "Default Signature",
         "Bucket" : "bg0933-simulation-dev",
         "Communications Timeout" : "30 secs",
@@ -778,242 +1069,11 @@
       "type" : "org.apache.nifi.processors.aws.s3.FetchS3Object",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-aws-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "PRIMARY",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "c15b702f-03ee-38d6-8620-eb66bd15eeec",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "ListS3",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -3240.0,
-        "y" : -800.0
-      },
-      "properties" : {
-        "list-type" : "2",
-        "et-initial-listing-target" : "all",
-        "prefix" : "nifipoc/30110",
-        "Endpoint Override URL" : "https://s3-eu1.object.storage.tpc.tesco.org",
-        "et-time-window" : "3 hours",
-        "requester-pays" : "false",
-        "listing-strategy" : "timestamps",
-        "Signer Override" : "Default Signature",
-        "min-age" : "0 sec",
-        "write-s3-user-metadata" : "false",
-        "AWS Credentials Provider service" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
-        "Listing Batch Size" : "10",
-        "write-s3-object-tags" : "false",
-        "Bucket" : "bg0933-simulation-dev",
-        "Communications Timeout" : "30 secs",
-        "Region" : "eu-west-2",
-        "use-versions" : "false"
-      },
-      "propertyDescriptors" : {
-        "list-type" : {
-          "displayName" : "List Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "list-type",
-          "sensitive" : false
-        },
-        "et-initial-listing-target" : {
-          "displayName" : "Entity Tracking Initial Listing Target",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "et-initial-listing-target",
-          "sensitive" : false
-        },
-        "prefix" : {
-          "displayName" : "Prefix",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "prefix",
-          "sensitive" : false
-        },
-        "record-writer" : {
-          "displayName" : "Record Writer",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "record-writer",
-          "sensitive" : false
-        },
-        "proxy-configuration-service" : {
-          "displayName" : "Proxy Configuration Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "proxy-configuration-service",
-          "sensitive" : false
-        },
-        "Endpoint Override URL" : {
-          "displayName" : "Endpoint Override URL",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Endpoint Override URL",
-          "sensitive" : false
-        },
-        "et-time-window" : {
-          "displayName" : "Entity Tracking Time Window",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "et-time-window",
-          "sensitive" : false
-        },
-        "custom-signer-class-name" : {
-          "displayName" : "Custom Signer Class Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "custom-signer-class-name",
-          "sensitive" : false
-        },
-        "requester-pays" : {
-          "displayName" : "Requester Pays",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "requester-pays",
-          "sensitive" : false
-        },
-        "custom-signer-module-location" : {
-          "displayName" : "Custom Signer Module Location",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "custom-signer-module-location",
-          "resourceDefinition" : {
-            "cardinality" : "MULTIPLE",
-            "resourceTypes" : [ "FILE", "DIRECTORY" ]
-          },
-          "sensitive" : false
-        },
-        "listing-strategy" : {
-          "displayName" : "Listing Strategy",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "listing-strategy",
-          "sensitive" : false
-        },
-        "Signer Override" : {
-          "displayName" : "Signer Override",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Signer Override",
-          "sensitive" : false
-        },
-        "delimiter" : {
-          "displayName" : "Delimiter",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "delimiter",
-          "sensitive" : false
-        },
-        "min-age" : {
-          "displayName" : "Minimum Object Age",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "min-age",
-          "sensitive" : false
-        },
-        "write-s3-user-metadata" : {
-          "displayName" : "Write User Metadata",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "write-s3-user-metadata",
-          "sensitive" : false
-        },
-        "max-age" : {
-          "displayName" : "Maximum Object Age",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "max-age",
-          "sensitive" : false
-        },
-        "AWS Credentials Provider service" : {
-          "displayName" : "AWS Credentials Provider Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "AWS Credentials Provider service",
-          "sensitive" : false
-        },
-        "Listing Batch Size" : {
-          "displayName" : "Listing Batch Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Listing Batch Size",
-          "sensitive" : false
-        },
-        "SSL Context Service" : {
-          "displayName" : "SSL Context Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "SSL Context Service",
-          "sensitive" : false
-        },
-        "write-s3-object-tags" : {
-          "displayName" : "Write Object Tags",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "write-s3-object-tags",
-          "sensitive" : false
-        },
-        "Bucket" : {
-          "displayName" : "Bucket",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Bucket",
-          "sensitive" : false
-        },
-        "Communications Timeout" : {
-          "displayName" : "Communications Timeout",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Communications Timeout",
-          "sensitive" : false
-        },
-        "Region" : {
-          "displayName" : "Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Region",
-          "sensitive" : false
-        },
-        "et-state-cache" : {
-          "displayName" : "Entity Tracking State Cache",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "et-state-cache",
-          "sensitive" : false
-        },
-        "use-versions" : {
-          "displayName" : "Use Versions",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "use-versions",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "5 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.aws.s3.ListS3",
-      "yieldDuration" : "1 sec"
-    }, {
       "autoTerminatedRelationships" : [ "success", "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-aws-nar",
+        "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
         "version" : "2.0.0"
       },
@@ -1022,48 +1082,25 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "d7e7f0ec-2ed2-36bc-a53d-3f4ce77c6aa9",
+      "identifier" : "43cfed7c-6b40-39d8-ab59-feea3f54f913",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "PutS3Object",
+      "name" : "PutFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -4192.0,
-        "y" : -960.0
+        "x" : -3944.0,
+        "y" : 392.0
       },
       "properties" : {
-        "FullControl User List" : "${s3.permissions.full.users}",
-        "Owner" : "${s3.owner}",
-        "Resource Transfer Source" : "FLOWFILE_CONTENT",
-        "s3-object-remove-tags-prefix" : "false",
-        "Endpoint Override URL" : "https://s3-eu1.object.storage.tpc.tesco.org",
-        "Multipart Upload Max Age Threshold" : "7 days",
-        "canned-acl" : "${s3.permissions.cannedacl}",
-        "Signer Override" : "Default Signature",
-        "server-side-encryption" : "None",
-        "Write ACL User List" : "${s3.permissions.writeacl.users}",
-        "Read ACL User List" : "${s3.permissions.readacl.users}",
-        "Storage Class" : "Standard",
-        "Multipart Part Size" : "5 GB",
-        "use-chunked-encoding" : "true",
-        "Object Key" : "nifipoc/dest/${filename}",
-        "AWS Credentials Provider service" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
-        "Multipart Threshold" : "5 GB",
-        "s3-object-tags-prefix" : "nifipoc/dest",
-        "Bucket" : "bg0933-simulation-dev",
-        "Multipart Upload AgeOff Interval" : "60 min",
-        "use-path-style-access" : "false",
-        "Write Permission User List" : "${s3.permissions.write.users}",
-        "Communications Timeout" : "30 secs",
-        "Region" : "eu-west-2",
-        "Read Permission User List" : "${s3.permissions.read.users}",
-        "s3-temporary-directory-multipart" : "${java.io.tmpdir}"
+        "Create Missing Directories" : "true",
+        "Directory" : "#{tar1}",
+        "Conflict Resolution Strategy" : "fail"
       },
       "propertyDescriptors" : {
-        "FullControl User List" : {
-          "displayName" : "FullControl User List",
+        "Group" : {
+          "displayName" : "Group",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "FullControl User List",
+          "name" : "Group",
           "sensitive" : false
         },
         "Owner" : {
@@ -1073,246 +1110,46 @@
           "name" : "Owner",
           "sensitive" : false
         },
-        "proxy-configuration-service" : {
-          "displayName" : "Proxy Configuration Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "proxy-configuration-service",
-          "sensitive" : false
-        },
-        "Resource Transfer Source" : {
-          "displayName" : "Resource Transfer Source",
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Resource Transfer Source",
+          "name" : "Create Missing Directories",
           "sensitive" : false
         },
-        "Cache Control" : {
-          "displayName" : "Cache Control",
+        "Permissions" : {
+          "displayName" : "Permissions",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Cache Control",
+          "name" : "Permissions",
           "sensitive" : false
         },
-        "s3-object-remove-tags-prefix" : {
-          "displayName" : "Remove Tag Prefix",
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "s3-object-remove-tags-prefix",
+          "name" : "Maximum File Count",
           "sensitive" : false
         },
-        "Endpoint Override URL" : {
-          "displayName" : "Endpoint Override URL",
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Endpoint Override URL",
+          "name" : "Last Modified Time",
           "sensitive" : false
         },
-        "File Resource Service" : {
-          "displayName" : "File Resource Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "File Resource Service",
-          "sensitive" : false
-        },
-        "Multipart Upload Max Age Threshold" : {
-          "displayName" : "Multipart Upload Max Age Threshold",
+        "Directory" : {
+          "displayName" : "Directory",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Multipart Upload Max Age Threshold",
+          "name" : "Directory",
           "sensitive" : false
         },
-        "custom-signer-class-name" : {
-          "displayName" : "Custom Signer Class Name",
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "custom-signer-class-name",
-          "sensitive" : false
-        },
-        "canned-acl" : {
-          "displayName" : "Canned ACL",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "canned-acl",
-          "sensitive" : false
-        },
-        "custom-signer-module-location" : {
-          "displayName" : "Custom Signer Module Location",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "custom-signer-module-location",
-          "resourceDefinition" : {
-            "cardinality" : "MULTIPLE",
-            "resourceTypes" : [ "FILE", "DIRECTORY" ]
-          },
-          "sensitive" : false
-        },
-        "Signer Override" : {
-          "displayName" : "Signer Override",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Signer Override",
-          "sensitive" : false
-        },
-        "Content Type" : {
-          "displayName" : "Content Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Content Type",
-          "sensitive" : false
-        },
-        "server-side-encryption" : {
-          "displayName" : "Server Side Encryption",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "server-side-encryption",
-          "sensitive" : false
-        },
-        "Write ACL User List" : {
-          "displayName" : "Write ACL User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Write ACL User List",
-          "sensitive" : false
-        },
-        "encryption-service" : {
-          "displayName" : "Encryption Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "encryption-service",
-          "sensitive" : false
-        },
-        "Read ACL User List" : {
-          "displayName" : "Read ACL User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Read ACL User List",
-          "sensitive" : false
-        },
-        "Content Disposition" : {
-          "displayName" : "Content Disposition",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Content Disposition",
-          "sensitive" : false
-        },
-        "Storage Class" : {
-          "displayName" : "Storage Class",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Storage Class",
-          "sensitive" : false
-        },
-        "Multipart Part Size" : {
-          "displayName" : "Multipart Part Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Part Size",
-          "sensitive" : false
-        },
-        "use-chunked-encoding" : {
-          "displayName" : "Use Chunked Encoding",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "use-chunked-encoding",
-          "sensitive" : false
-        },
-        "Object Key" : {
-          "displayName" : "Object Key",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Object Key",
-          "sensitive" : false
-        },
-        "AWS Credentials Provider service" : {
-          "displayName" : "AWS Credentials Provider Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "AWS Credentials Provider service",
-          "sensitive" : false
-        },
-        "Multipart Threshold" : {
-          "displayName" : "Multipart Threshold",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Threshold",
-          "sensitive" : false
-        },
-        "s3-object-tags-prefix" : {
-          "displayName" : "Object Tags Prefix",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "s3-object-tags-prefix",
-          "sensitive" : false
-        },
-        "SSL Context Service" : {
-          "displayName" : "SSL Context Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "SSL Context Service",
-          "sensitive" : false
-        },
-        "Bucket" : {
-          "displayName" : "Bucket",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Bucket",
-          "sensitive" : false
-        },
-        "Multipart Upload AgeOff Interval" : {
-          "displayName" : "Multipart Upload AgeOff Interval",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Upload AgeOff Interval",
-          "sensitive" : false
-        },
-        "use-path-style-access" : {
-          "displayName" : "Use Path Style Access",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "use-path-style-access",
-          "sensitive" : false
-        },
-        "Write Permission User List" : {
-          "displayName" : "Write Permission User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Write Permission User List",
-          "sensitive" : false
-        },
-        "Communications Timeout" : {
-          "displayName" : "Communications Timeout",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Communications Timeout",
-          "sensitive" : false
-        },
-        "Region" : {
-          "displayName" : "Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Region",
-          "sensitive" : false
-        },
-        "Read Permission User List" : {
-          "displayName" : "Read Permission User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Read Permission User List",
-          "sensitive" : false
-        },
-        "Expiration Time Rule" : {
-          "displayName" : "Expiration Time Rule",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Expiration Time Rule",
-          "sensitive" : false
-        },
-        "s3-temporary-directory-multipart" : {
-          "displayName" : "Temporary Directory Multipart State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "s3-temporary-directory-multipart",
+          "name" : "Conflict Resolution Strategy",
           "sensitive" : false
         }
       },
@@ -1323,14 +1160,14 @@
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.aws.s3.PutS3Object",
+      "type" : "org.apache.nifi.processors.standard.PutFile",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
+        "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
         "version" : "2.0.0"
       },
@@ -1339,71 +1176,126 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3e961ac0-38f6-3235-a3f3-dc5666a53831",
+      "identifier" : "646f81d5-f438-3a01-b8fa-4bd36c7130b4",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
+      "name" : "GetFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -4312.0,
-        "y" : -136.0
+        "x" : -576.0,
+        "y" : -296.0
       },
       "properties" : {
-        "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100",
-        "mergeFiles" : "merge-content"
+        "Keep Source File" : "false",
+        "Minimum File Age" : "0 sec",
+        "Polling Interval" : "0 sec",
+        "Input Directory" : "#{src}",
+        "Batch Size" : "10",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "[^\\.].*"
       },
       "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
+          "name" : "Keep Source File",
           "sensitive" : false
         },
-        "Store State" : {
-          "displayName" : "Store State",
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Store State",
+          "name" : "Minimum File Age",
           "sensitive" : false
         },
-        "canonical-value-lookup-cache-size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "canonical-value-lookup-cache-size",
+          "name" : "Polling Interval",
           "sensitive" : false
         },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
+        "Input Directory" : {
+          "displayName" : "Input Directory",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
+          "name" : "Input Directory",
           "sensitive" : false
         },
-        "mergeFiles" : {
-          "displayName" : "mergeFiles",
-          "dynamic" : true,
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "mergeFiles",
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Size",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ignore Hidden Files",
+          "sensitive" : false
+        },
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Recurse Subdirectories",
+          "sensitive" : false
+        },
+        "File Filter" : {
+          "displayName" : "File Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Filter",
+          "sensitive" : false
+        },
+        "Path Filter" : {
+          "displayName" : "Path Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Filter",
           "sensitive" : false
         }
       },
       "retriedRelationships" : [ ],
       "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
+      "runDurationMillis" : 0,
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "type" : "org.apache.nifi.processors.standard.GetFile",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-aws-nar",
+        "artifact" : "nifi-standard-nar",
         "group" : "org.apache.nifi",
         "version" : "2.0.0"
       },
@@ -1412,297 +1304,108 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "1ae14b16-c67a-35f3-be3e-e96fb5160b55",
+      "identifier" : "7deee659-f605-3415-9875-a90147f1941d",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "PutS3Object",
+      "name" : "GetFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -4288.0,
-        "y" : 528.0
+        "x" : -4928.0,
+        "y" : -584.0
       },
       "properties" : {
-        "FullControl User List" : "${s3.permissions.full.users}",
-        "Owner" : "${s3.owner}",
-        "Resource Transfer Source" : "FLOWFILE_CONTENT",
-        "s3-object-remove-tags-prefix" : "false",
-        "Endpoint Override URL" : "https://s3-eu1.object.storage.tpc.tesco.org",
-        "Multipart Upload Max Age Threshold" : "7 days",
-        "canned-acl" : "${s3.permissions.cannedacl}",
-        "Signer Override" : "Default Signature",
-        "server-side-encryption" : "None",
-        "Write ACL User List" : "${s3.permissions.writeacl.users}",
-        "Read ACL User List" : "${s3.permissions.readacl.users}",
-        "Storage Class" : "Standard",
-        "Multipart Part Size" : "5 GB",
-        "use-chunked-encoding" : "true",
-        "Object Key" : "nifipoc/dest/${filename}",
-        "AWS Credentials Provider service" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
-        "Multipart Threshold" : "5 GB",
-        "s3-object-tags-prefix" : "nifipoc/dest",
-        "Bucket" : "bg0933-simulation-dev",
-        "Multipart Upload AgeOff Interval" : "60 min",
-        "use-path-style-access" : "false",
-        "Write Permission User List" : "${s3.permissions.write.users}",
-        "Communications Timeout" : "30 secs",
-        "Region" : "eu-west-2",
-        "Read Permission User List" : "${s3.permissions.read.users}",
-        "s3-temporary-directory-multipart" : "${java.io.tmpdir}"
+        "Keep Source File" : "false",
+        "Minimum File Age" : "0 sec",
+        "Polling Interval" : "0 sec",
+        "Input Directory" : "#{src1}",
+        "Batch Size" : "10",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "[^\\.].*"
       },
       "propertyDescriptors" : {
-        "FullControl User List" : {
-          "displayName" : "FullControl User List",
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "FullControl User List",
+          "name" : "Keep Source File",
           "sensitive" : false
         },
-        "Owner" : {
-          "displayName" : "Owner",
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Owner",
+          "name" : "Minimum File Age",
           "sensitive" : false
         },
-        "proxy-configuration-service" : {
-          "displayName" : "Proxy Configuration Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "proxy-configuration-service",
-          "sensitive" : false
-        },
-        "Resource Transfer Source" : {
-          "displayName" : "Resource Transfer Source",
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Resource Transfer Source",
+          "name" : "Polling Interval",
           "sensitive" : false
         },
-        "Cache Control" : {
-          "displayName" : "Cache Control",
+        "Input Directory" : {
+          "displayName" : "Input Directory",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Cache Control",
+          "name" : "Input Directory",
           "sensitive" : false
         },
-        "s3-object-remove-tags-prefix" : {
-          "displayName" : "Remove Tag Prefix",
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "s3-object-remove-tags-prefix",
+          "name" : "Maximum File Age",
           "sensitive" : false
         },
-        "Endpoint Override URL" : {
-          "displayName" : "Endpoint Override URL",
+        "Batch Size" : {
+          "displayName" : "Batch Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Endpoint Override URL",
+          "name" : "Batch Size",
           "sensitive" : false
         },
-        "File Resource Service" : {
-          "displayName" : "File Resource Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "File Resource Service",
-          "sensitive" : false
-        },
-        "Multipart Upload Max Age Threshold" : {
-          "displayName" : "Multipart Upload Max Age Threshold",
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Multipart Upload Max Age Threshold",
+          "name" : "Maximum File Size",
           "sensitive" : false
         },
-        "custom-signer-class-name" : {
-          "displayName" : "Custom Signer Class Name",
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "custom-signer-class-name",
+          "name" : "Minimum File Size",
           "sensitive" : false
         },
-        "canned-acl" : {
-          "displayName" : "Canned ACL",
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "canned-acl",
+          "name" : "Ignore Hidden Files",
           "sensitive" : false
         },
-        "custom-signer-module-location" : {
-          "displayName" : "Custom Signer Module Location",
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "custom-signer-module-location",
-          "resourceDefinition" : {
-            "cardinality" : "MULTIPLE",
-            "resourceTypes" : [ "FILE", "DIRECTORY" ]
-          },
+          "name" : "Recurse Subdirectories",
           "sensitive" : false
         },
-        "Signer Override" : {
-          "displayName" : "Signer Override",
+        "File Filter" : {
+          "displayName" : "File Filter",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Signer Override",
+          "name" : "File Filter",
           "sensitive" : false
         },
-        "Content Type" : {
-          "displayName" : "Content Type",
+        "Path Filter" : {
+          "displayName" : "Path Filter",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Content Type",
-          "sensitive" : false
-        },
-        "server-side-encryption" : {
-          "displayName" : "Server Side Encryption",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "server-side-encryption",
-          "sensitive" : false
-        },
-        "Write ACL User List" : {
-          "displayName" : "Write ACL User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Write ACL User List",
-          "sensitive" : false
-        },
-        "encryption-service" : {
-          "displayName" : "Encryption Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "encryption-service",
-          "sensitive" : false
-        },
-        "Read ACL User List" : {
-          "displayName" : "Read ACL User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Read ACL User List",
-          "sensitive" : false
-        },
-        "Content Disposition" : {
-          "displayName" : "Content Disposition",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Content Disposition",
-          "sensitive" : false
-        },
-        "Storage Class" : {
-          "displayName" : "Storage Class",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Storage Class",
-          "sensitive" : false
-        },
-        "Multipart Part Size" : {
-          "displayName" : "Multipart Part Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Part Size",
-          "sensitive" : false
-        },
-        "use-chunked-encoding" : {
-          "displayName" : "Use Chunked Encoding",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "use-chunked-encoding",
-          "sensitive" : false
-        },
-        "Object Key" : {
-          "displayName" : "Object Key",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Object Key",
-          "sensitive" : false
-        },
-        "AWS Credentials Provider service" : {
-          "displayName" : "AWS Credentials Provider Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "AWS Credentials Provider service",
-          "sensitive" : false
-        },
-        "Multipart Threshold" : {
-          "displayName" : "Multipart Threshold",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Threshold",
-          "sensitive" : false
-        },
-        "s3-object-tags-prefix" : {
-          "displayName" : "Object Tags Prefix",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "s3-object-tags-prefix",
-          "sensitive" : false
-        },
-        "SSL Context Service" : {
-          "displayName" : "SSL Context Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "SSL Context Service",
-          "sensitive" : false
-        },
-        "Bucket" : {
-          "displayName" : "Bucket",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Bucket",
-          "sensitive" : false
-        },
-        "Multipart Upload AgeOff Interval" : {
-          "displayName" : "Multipart Upload AgeOff Interval",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Upload AgeOff Interval",
-          "sensitive" : false
-        },
-        "use-path-style-access" : {
-          "displayName" : "Use Path Style Access",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "use-path-style-access",
-          "sensitive" : false
-        },
-        "Write Permission User List" : {
-          "displayName" : "Write Permission User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Write Permission User List",
-          "sensitive" : false
-        },
-        "Communications Timeout" : {
-          "displayName" : "Communications Timeout",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Communications Timeout",
-          "sensitive" : false
-        },
-        "Region" : {
-          "displayName" : "Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Region",
-          "sensitive" : false
-        },
-        "Read Permission User List" : {
-          "displayName" : "Read Permission User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Read Permission User List",
-          "sensitive" : false
-        },
-        "Expiration Time Rule" : {
-          "displayName" : "Expiration Time Rule",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Expiration Time Rule",
-          "sensitive" : false
-        },
-        "s3-temporary-directory-multipart" : {
-          "displayName" : "Temporary Directory Multipart State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "s3-temporary-directory-multipart",
+          "name" : "Path Filter",
           "sensitive" : false
         }
       },
@@ -1713,258 +1416,7 @@
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.aws.s3.PutS3Object",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ "failure" ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-jolt-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e904665d-ace0-3f84-a556-369c0969bda2",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Delete Store Object from Array ",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -4600.0,
-        "y" : -832.0
-      },
-      "properties" : {
-        "Jolt Transform" : "jolt-transform-shift",
-        "Max String Length" : "20 MB",
-        "Transform Cache Size" : "1",
-        "Pretty Print" : "false",
-        "Jolt Specification" : "\n    {\n      \"*\": \"&\",\n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": null,\n            \"*\": { \"@2\": \"&4[]\" }\n          }\n        }\n      }\n    }\n "
-      },
-      "propertyDescriptors" : {
-        "Jolt Transform" : {
-          "displayName" : "Jolt Transform",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Jolt Transform",
-          "sensitive" : false
-        },
-        "Max String Length" : {
-          "displayName" : "Max String Length",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Max String Length",
-          "sensitive" : false
-        },
-        "Transform Cache Size" : {
-          "displayName" : "Transform Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Transform Cache Size",
-          "sensitive" : false
-        },
-        "Custom Transformation Class Name" : {
-          "displayName" : "Custom Transformation Class Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Custom Transformation Class Name",
-          "sensitive" : false
-        },
-        "Custom Module Directory" : {
-          "displayName" : "Custom Module Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Custom Module Directory",
-          "resourceDefinition" : {
-            "cardinality" : "MULTIPLE",
-            "resourceTypes" : [ "FILE", "DIRECTORY" ]
-          },
-          "sensitive" : false
-        },
-        "Pretty Print" : {
-          "displayName" : "Pretty Print",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Pretty Print",
-          "sensitive" : false
-        },
-        "Jolt Specification" : {
-          "displayName" : "Jolt Specification",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Jolt Specification",
-          "resourceDefinition" : {
-            "cardinality" : "SINGLE",
-            "resourceTypes" : [ "TEXT", "FILE" ]
-          },
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "9324ab58-c355-332b-9553-8ca861ed12a5",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -3896.0,
-        "y" : 360.0
-      },
-      "properties" : {
-        "filename" : "${filename}.json",
-        "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100",
-        "mergeFiles" : "merge-content"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "filename" : {
-          "displayName" : "filename",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "filename",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "canonical-value-lookup-cache-size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "canonical-value-lookup-cache-size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        },
-        "mergeFiles" : {
-          "displayName" : "mergeFiles",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "mergeFiles",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "92969894-4237-3a0a-b92c-6edab85e29cc",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -3680.0,
-        "y" : -216.0
-      },
-      "properties" : {
-        "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100",
-        "mergeFiles" : "merge-content"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "canonical-value-lookup-cache-size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "canonical-value-lookup-cache-size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        },
-        "mergeFiles" : {
-          "displayName" : "mergeFiles",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "mergeFiles",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "type" : "org.apache.nifi.processors.standard.GetFile",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ "original", "failure" ],
@@ -2000,7 +1452,7 @@
         "Delimiter Strategy" : "Text",
         "Merge Format" : "Binary Concatenation",
         "Footer File" : "]",
-        "Max Bin Age" : "60 secs",
+        "Max Bin Age" : "10 secs",
         "Demarcator File" : ",",
         "Correlation Attribute Name" : "mergeFiles",
         "Header File" : "[",
@@ -2170,19 +1622,18 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e26aea7f-620b-3736-8944-ba0419205e6b",
+      "identifier" : "92969894-4237-3a0a-b92c-6edab85e29cc",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Update File name",
+      "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -4888.0,
-        "y" : -504.0
+        "x" : -3680.0,
+        "y" : -216.0
       },
       "properties" : {
-        "Delete Attributes Expression" : "name",
-        "filename" : "${filename:substringAfterLast('/')}",
         "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100"
+        "canonical-value-lookup-cache-size" : "100",
+        "mergeFiles" : "merge-content"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -2190,13 +1641,6 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "filename" : {
-          "displayName" : "filename",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "filename",
           "sensitive" : false
         },
         "Store State" : {
@@ -2219,6 +1663,13 @@
           "identifiesControllerService" : false,
           "name" : "Stateful Variables Initial Value",
           "sensitive" : false
+        },
+        "mergeFiles" : {
+          "displayName" : "mergeFiles",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "mergeFiles",
+          "sensitive" : false
         }
       },
       "retriedRelationships" : [ ],
@@ -2229,6 +1680,610 @@
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b8539d46-ab27-377b-bccb-a7914b485fdc",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -208.0,
+        "y" : 88.0
+      },
+      "properties" : {
+        "Create Missing Directories" : "true",
+        "Directory" : "#{tar}",
+        "Conflict Resolution Strategy" : "fail"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "DISABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "89197f72-dbe6-38bf-8a94-167bab872bec",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -4064.0,
+        "y" : -848.0
+      },
+      "properties" : {
+        "Create Missing Directories" : "true",
+        "Directory" : "#{tar}",
+        "Conflict Resolution Strategy" : "fail"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cab204a4-ad5f-3f5b-97d3-dc58f5fe206f",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -856.0,
+        "y" : 120.0
+      },
+      "properties" : {
+        "Create Missing Directories" : "true",
+        "Directory" : "#{tar1}",
+        "Conflict Resolution Strategy" : "fail"
+      },
+      "propertyDescriptors" : {
+        "Group" : {
+          "displayName" : "Group",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Group",
+          "sensitive" : false
+        },
+        "Owner" : {
+          "displayName" : "Owner",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Owner",
+          "sensitive" : false
+        },
+        "Create Missing Directories" : {
+          "displayName" : "Create Missing Directories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Create Missing Directories",
+          "sensitive" : false
+        },
+        "Permissions" : {
+          "displayName" : "Permissions",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Permissions",
+          "sensitive" : false
+        },
+        "Maximum File Count" : {
+          "displayName" : "Maximum File Count",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Count",
+          "sensitive" : false
+        },
+        "Last Modified Time" : {
+          "displayName" : "Last Modified Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Last Modified Time",
+          "sensitive" : false
+        },
+        "Directory" : {
+          "displayName" : "Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Directory",
+          "sensitive" : false
+        },
+        "Conflict Resolution Strategy" : {
+          "displayName" : "Conflict Resolution Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Conflict Resolution Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "DISABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7662b241-c176-3441-a37e-58b1726162bb",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "GetFile",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -3392.0,
+        "y" : -496.0
+      },
+      "properties" : {
+        "Keep Source File" : "false",
+        "Minimum File Age" : "0 sec",
+        "Polling Interval" : "0 sec",
+        "Input Directory" : "#{src}",
+        "Batch Size" : "10",
+        "Minimum File Size" : "0 B",
+        "Ignore Hidden Files" : "true",
+        "Recurse Subdirectories" : "true",
+        "File Filter" : "[^\\.].*"
+      },
+      "propertyDescriptors" : {
+        "Keep Source File" : {
+          "displayName" : "Keep Source File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Keep Source File",
+          "sensitive" : false
+        },
+        "Minimum File Age" : {
+          "displayName" : "Minimum File Age",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Age",
+          "sensitive" : false
+        },
+        "Polling Interval" : {
+          "displayName" : "Polling Interval",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Polling Interval",
+          "sensitive" : false
+        },
+        "Input Directory" : {
+          "displayName" : "Input Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Input Directory",
+          "sensitive" : false
+        },
+        "Maximum File Age" : {
+          "displayName" : "Maximum File Age",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Age",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Maximum File Size" : {
+          "displayName" : "Maximum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum File Size",
+          "sensitive" : false
+        },
+        "Minimum File Size" : {
+          "displayName" : "Minimum File Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Minimum File Size",
+          "sensitive" : false
+        },
+        "Ignore Hidden Files" : {
+          "displayName" : "Ignore Hidden Files",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Ignore Hidden Files",
+          "sensitive" : false
+        },
+        "Recurse Subdirectories" : {
+          "displayName" : "Recurse Subdirectories",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Recurse Subdirectories",
+          "sensitive" : false
+        },
+        "File Filter" : {
+          "displayName" : "File Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "File Filter",
+          "sensitive" : false
+        },
+        "Path Filter" : {
+          "displayName" : "Path Filter",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Path Filter",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.GetFile",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jolt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "4559881f-a7a4-3d38-9b72-60f231c259e5",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "updating the file content",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -4624.0,
+        "y" : 112.0
+      },
+      "properties" : {
+        "Jolt Transform" : "jolt-transform-shift",
+        "Max String Length" : "20 MB",
+        "Transform Cache Size" : "1",
+        "Pretty Print" : "false",
+        "Jolt Specification" : "{\n      \"*\": {\n         \"*\":\"&\",\n        \"stores\": {\n          \"*\": \"stores[]\"\n        }\n      }\n    }\n  }"
+      },
+      "propertyDescriptors" : {
+        "Jolt Transform" : {
+          "displayName" : "Jolt Transform",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Transform",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Transform Cache Size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Transform Cache Size",
+          "sensitive" : false
+        },
+        "Custom Transformation Class Name" : {
+          "displayName" : "Custom Transformation Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Transformation Class Name",
+          "sensitive" : false
+        },
+        "Custom Module Directory" : {
+          "displayName" : "Custom Module Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Module Directory",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY" ]
+          },
+          "sensitive" : false
+        },
+        "Pretty Print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Pretty Print",
+          "sensitive" : false
+        },
+        "Jolt Specification" : {
+          "displayName" : "Jolt Specification",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Specification",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "TEXT", "FILE" ]
+          },
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-jolt-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "68d255f0-de27-3c9c-91bc-4d8e23bb0b19",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Delete Store Object from Array ",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 16.0,
+        "y" : -168.0
+      },
+      "properties" : {
+        "Jolt Transform" : "jolt-transform-shift",
+        "Max String Length" : "20 MB",
+        "Transform Cache Size" : "1",
+        "Pretty Print" : "false",
+        "Jolt Specification" : "\n    {\n      \"*\": \"&\",\n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": null,\n            \"*\": { \"@2\": \"&4[]\" }\n          }\n        }\n      }\n    }\n "
+      },
+      "propertyDescriptors" : {
+        "Jolt Transform" : {
+          "displayName" : "Jolt Transform",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Transform",
+          "sensitive" : false
+        },
+        "Max String Length" : {
+          "displayName" : "Max String Length",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "Transform Cache Size" : {
+          "displayName" : "Transform Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Transform Cache Size",
+          "sensitive" : false
+        },
+        "Custom Transformation Class Name" : {
+          "displayName" : "Custom Transformation Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Transformation Class Name",
+          "sensitive" : false
+        },
+        "Custom Module Directory" : {
+          "displayName" : "Custom Module Directory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Module Directory",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY" ]
+          },
+          "sensitive" : false
+        },
+        "Pretty Print" : {
+          "displayName" : "Pretty Print",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Pretty Print",
+          "sensitive" : false
+        },
+        "Jolt Specification" : {
+          "displayName" : "Jolt Specification",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Jolt Specification",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "TEXT", "FILE" ]
+          },
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "DISABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ ],
@@ -2244,18 +2299,18 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "PRIMARY",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "03cba1a4-9e22-335f-aa4e-5f10e4f1663c",
+      "identifier" : "45b4286c-bc1e-3713-9d25-4845af4e0328",
       "maxBackoffPeriod" : "10 mins",
       "name" : "ListS3",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -5304.0,
-        "y" : -824.0
+        "x" : -2728.0,
+        "y" : -920.0
       },
       "properties" : {
         "list-type" : "2",
         "et-initial-listing-target" : "all",
-        "prefix" : "nifipoc/30002",
+        "prefix" : "bbee-self-001/experiments/pkv-self-svc-test-01/8d72afa9-3f2e-4b23-9c6a-9f0d842833ac/output/RUN-0/logs/",
         "Endpoint Override URL" : "https://s3-eu1.object.storage.tpc.tesco.org",
         "et-time-window" : "3 hours",
         "requester-pays" : "false",
@@ -2263,7 +2318,7 @@
         "Signer Override" : "Default Signature",
         "min-age" : "0 sec",
         "write-s3-user-metadata" : "false",
-        "AWS Credentials Provider service" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
+        "AWS Credentials Provider service" : "90bf5a3f-7a09-3ab5-9d04-50383826e832",
         "Listing Batch Size" : "10",
         "write-s3-object-tags" : "false",
         "Bucket" : "bg0933-simulation-dev",
@@ -2456,7 +2511,7 @@
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "5 sec",
+      "schedulingPeriod" : "1 min",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.aws.s3.ListS3",
@@ -2475,20 +2530,20 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "4559881f-a7a4-3d38-9b72-60f231c259e5",
+      "identifier" : "9521b678-5152-357f-ba03-c4b9f9970ca2",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "updating the file content",
+      "name" : "Save Deleted Store Object as file",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -4264.0,
-        "y" : 208.0
+        "x" : -960.0,
+        "y" : -96.0
       },
       "properties" : {
         "Jolt Transform" : "jolt-transform-shift",
         "Max String Length" : "20 MB",
         "Transform Cache Size" : "1",
         "Pretty Print" : "false",
-        "Jolt Specification" : "{\n      \"*\": {\n         \"*\":\"&\",\n        \"stores\": {\n          \"*\": \"stores[]\"\n        }\n      }\n    }\n  }"
+        "Jolt Specification" : "\n    {\n     \n      \"stores\": {\n        \"*\": {\n          \"id\": {\n            \"6476\": { \"@2\": \"&4[]\" },\n            \"*\": null\n          }\n        }\n      }\n    }\n "
       },
       "propertyDescriptors" : {
         "Jolt Transform" : {
@@ -2552,170 +2607,11 @@
       "retriedRelationships" : [ ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
+      "scheduledState" : "DISABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ "failure" ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-aws-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a0ef8106-f91a-357a-9f89-0d1a79ba2c04",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "FetchS3Object",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -5072.0,
-        "y" : -672.0
-      },
-      "properties" : {
-        "Endpoint Override URL" : "https://s3-eu1.object.storage.tpc.tesco.org",
-        "requester-pays" : "false",
-        "Object Key" : "${filename}",
-        "AWS Credentials Provider service" : "c6852c24-b0e0-3e61-8014-4d74e5355e4e",
-        "Signer Override" : "Default Signature",
-        "Bucket" : "bg0933-simulation-dev",
-        "Communications Timeout" : "30 secs",
-        "Region" : "eu-west-2"
-      },
-      "propertyDescriptors" : {
-        "range-length" : {
-          "displayName" : "Range Length",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "range-length",
-          "sensitive" : false
-        },
-        "range-start" : {
-          "displayName" : "Range Start",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "range-start",
-          "sensitive" : false
-        },
-        "proxy-configuration-service" : {
-          "displayName" : "Proxy Configuration Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "proxy-configuration-service",
-          "sensitive" : false
-        },
-        "Endpoint Override URL" : {
-          "displayName" : "Endpoint Override URL",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Endpoint Override URL",
-          "sensitive" : false
-        },
-        "custom-signer-class-name" : {
-          "displayName" : "Custom Signer Class Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "custom-signer-class-name",
-          "sensitive" : false
-        },
-        "requester-pays" : {
-          "displayName" : "Requester Pays",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "requester-pays",
-          "sensitive" : false
-        },
-        "Object Key" : {
-          "displayName" : "Object Key",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Object Key",
-          "sensitive" : false
-        },
-        "AWS Credentials Provider service" : {
-          "displayName" : "AWS Credentials Provider Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "AWS Credentials Provider service",
-          "sensitive" : false
-        },
-        "custom-signer-module-location" : {
-          "displayName" : "Custom Signer Module Location",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "custom-signer-module-location",
-          "resourceDefinition" : {
-            "cardinality" : "MULTIPLE",
-            "resourceTypes" : [ "FILE", "DIRECTORY" ]
-          },
-          "sensitive" : false
-        },
-        "SSL Context Service" : {
-          "displayName" : "SSL Context Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "SSL Context Service",
-          "sensitive" : false
-        },
-        "Signer Override" : {
-          "displayName" : "Signer Override",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Signer Override",
-          "sensitive" : false
-        },
-        "Bucket" : {
-          "displayName" : "Bucket",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Bucket",
-          "sensitive" : false
-        },
-        "Version" : {
-          "displayName" : "Version",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Version",
-          "sensitive" : false
-        },
-        "Communications Timeout" : {
-          "displayName" : "Communications Timeout",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Communications Timeout",
-          "sensitive" : false
-        },
-        "Region" : {
-          "displayName" : "Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Region",
-          "sensitive" : false
-        },
-        "encryption-service" : {
-          "displayName" : "Encryption Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "encryption-service",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.aws.s3.FetchS3Object",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ "failure" ],
@@ -2813,80 +2709,6 @@
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.jolt.JoltTransformJSON",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.0.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "20aeeae4-a1c6-39d4-a785-e5f3d7da3892",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Update File name",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -3528.0,
-        "y" : -400.0
-      },
-      "properties" : {
-        "Delete Attributes Expression" : "name",
-        "filename" : "${filename:substringAfterLast('/')}",
-        "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "filename" : {
-          "displayName" : "filename",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "filename",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "canonical-value-lookup-cache-size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "canonical-value-lookup-cache-size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
