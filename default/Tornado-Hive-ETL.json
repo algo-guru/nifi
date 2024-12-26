@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1735210053975,
+    "description" : "This is the basic of add and remove stores",
+    "identifier" : "Tornado-Hive-ETL",
+    "lastModifiedTimestamp" : 1735210053975,
+    "name" : "Tornado-Hive-ETL",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
